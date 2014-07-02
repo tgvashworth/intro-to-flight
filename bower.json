@@ -1,0 +1,14 @@
+{
+  "name": "intro-to-flight",
+  "version": "0.0.0",
+  "dependencies": {
+    "jquery": "2.x.x",
+    "flight": "~1.2.0",
+    "requirejs": "~2.1.5",
+    "components-bootstrap": "3.x.x",
+    "marked": "git@github.com:chjj/marked.git#1c188eb"
+  },
+  "devDependencies": {
+    "jasmine-flight": "~2.2.0"
+  }
+}

@@ -1,0 +1,83 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font: 20px/1.4 Fira Sans, sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+    margin: 0em 0em 0.444em;
+}
+
+ul {
+    margin: 0em 0em 0.667em;
+}
+
+blockquote {
+    font-style: italic;
+    position: relative;
+}
+
+blockquote:before {
+    content: '“';
+    top: 0.222em;
+    left: -0.667em;
+    line-height: 0;
+    padding: 0.1em;
+    position: absolute;
+    font-size: 5em;
+    opacity: 0.1;
+}
+
+pre {
+  border: 1px solid #ddd;
+  background-color: #f1f1f1;
+  padding: 0.227em 0.444em;
+  margin: 0.444em 0;
+  overflow-x: scroll;
+}
+
+code {
+  border: 1px solid #ddd;
+  background-color: #f1f1f1;
+  padding: 0 .2em;
+}
+
+pre code {
+  border: none;
+  font-family: "Fira Mono", monospace;
+  font-size: 0.9em;
+  line-height: 1.1;
+  padding: 0;
+}
+
+.slide {
+    padding: 5em 2.5em 2.5em 5em;
+    height: 100vh;
+    width: 100vw;
+    max-width: 50em;
+    position: absolute;
+    background: white;
+    opacity: 0;
+    transition: opacity cubic-bezier(0.215, 0.610, 0.355, 1.000) 1000ms;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide:after {
+    font-family: Fira Mono, monospace;
+    content: attr(data-index) '/' attr(data-count);
+    position: absolute;
+    bottom: 1.5em;
+    left: 5em;
+    opacity: 0.3;
+}
+
+.slide img {
+    max-height: 5em;
+}
