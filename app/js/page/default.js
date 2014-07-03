@@ -27,6 +27,7 @@ define(function (require) {
     window.location.hash = index;
     setTimeout(function () {
       $target.addClass('active')
+      document.title = $target.find('h1, h2, h3, h4, h5, h6').first().text();
     }, 0);
   }
 

@@ -1,21 +1,27 @@
 # What is Flight?
 
 - A way to extend Component functionality with Mixins&hellip;
+
 ```js
-return defineComponent(Tweet, withTweetActions, withTimestamp);
+var Tweet = defineComponent(tweet, withTweetActions, withTimestamp);
 ```
 - &hellip; and communicate using events.
+
 ```js
-// Tweet
-this.on(document, 'dataSendTweet', function (event, data) {
-    // . . .
-});
+function API() {
+    this.on('sendTweet', function (event, data) {
+        // . . .
+    });
+}
+function TweetButton() {
+    this.trigger('sendTweet', {
+        text: 'I <3 Flight'
+    });
+}
 ```
-```js
-// TweetButton
-this.trigger('dataSendTweet', {
-    text: 'I <3 Flight'
-});
-```
-- Good at fitting around existing code
-- Lightweight. ~5k light.
+
+- Good at fitting around existing code.
+    - Doesn't take over your page
+- Lightweight.
+    - ~5k light.
+    - *Tiny* API.

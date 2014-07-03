@@ -1,4 +1,4 @@
-![](http://flightjs.github.io/img/flight-logo.png)
+![](/content/flight-logo.png)
 
 # Introduction to Flight
 
