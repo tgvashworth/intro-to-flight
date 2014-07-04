@@ -34,6 +34,13 @@ define(function (require) {
     });
 
     this.after('initialize', function () {
+      this.on(document, 'slideSetup', function () {
+        console.log('slideSetup');
+        this.trigger('slideContent', {
+          index: this.$node.attr('data-index'),
+          content: this.content
+        });
+      });
       this.$node
         .attr('data-index', this.attr.index + 1)
         .attr('data-count', this.attr.count);
@@ -41,7 +48,8 @@ define(function (require) {
       this.loadFile(this.attr.file)
         .then(function (markdown) {
           var $inner = $($('#tmpl-slide').text());
-          $inner.find('.slide-scroll-container').html(marked(markdown));
+          this.content = marked(markdown);
+          $inner.find('.slide-scroll-container').html(this.content);
           this.$node.prepend(
             $inner
           );

@@ -23,5 +23,8 @@
     "test": "karma start --single-run --browsers PhantomJS",
     "watch": "npm run server > server.log & npm run livereload",
     "watch-test": "karma start"
+  },
+  "dependencies": {
+    "socket.io": "^1.0.6"
   }
 }

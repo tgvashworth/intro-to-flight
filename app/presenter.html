@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>intro-to-flight</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="/css/main.css">
+    <style type="text/css">
+    .slide-chrome {
+        padding: 1em;
+        margin: 1em;
+        border: 1px solid black;
+    }
+    .slide-chrome .content {
+        font-size: 0.5em;
+    }
+    img {
+        height: 5em;
+        width: 5em;
+    }
+    </style>
+  </head>
+  <body>
+
+    <div id="current-slide" class="slide-chrome">
+        <div class="content"></div>
+    </div>
+    <div id="next-slide" class="slide-chrome">
+        <div class="content"></div>
+    </div>
+    <button id="prev" onclick="socket.emit('previous')">Previous</button>
+    <button id="next" onclick="socket.emit('next')">Next</button>
+
+    <!--[if lt IE 9]>
+    <script src="/bower_components/es5-shim/es5-shim.js"></script>
+    <script src="/bower_components/es5-shim/es5-sham.js"></script>
+    <![endif]-->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="js/keymaster.js"></script>
+    <script src="//localhost:8081/socket.io/socket.io.js"></script>
+    <script>
+    var slides = {};
+    var socket = io.connect('http://localhost:8081');
+    socket.on('connect', function (data) {
+        socket.emit('setup')
+    });
+    socket.on('slide', function (index, content) {
+        console.log('got', index);
+        slides[index] = content;
+        activate(~~$('#current-slide .content').attr('data-index'));
+    });
+    socket.on('activate', activate);
+    function activate(index) {
+        $('#current-slide .content').html(slides[index] || '').attr('data-index', index);
+        $('#next-slide .content').html(slides[index+1] || '');
+    }
+
+    </script>
+
+  </body>
+</html>

@@ -2,6 +2,17 @@ define(function (require) {
 
   'use strict';
 
+  var socket = io.connect('http://localhost:8081');
+  socket.on('setup', function (data) {
+    $(document).trigger('slideSetup');
+  });
+  socket.on('next', function (data) {
+    next();
+  });
+  socket.on('previous', function (data) {
+    previous();
+  });
+
   /**
    * Module dependencies
    */
@@ -24,6 +35,9 @@ define(function (require) {
       .filter('[data-index=' + index + ']')
       .remove()
       .appendTo('.slides')
+      .trigger('activate')
+    console.log('activate', index);
+    socket.emit('activate', index);
     window.location.hash = index;
     setTimeout(function () {
       $target.addClass('active');
@@ -73,6 +87,12 @@ define(function (require) {
 
     key('right, space', next);
     key('left', previous);
+
+    $(document).on('slideContent', function (event, data) {
+      console.log('slideContent', data);
+      socket.emit('slide', data.index, data.content);
+    });
+
   }
 
 });
