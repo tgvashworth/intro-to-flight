@@ -26,17 +26,29 @@ define(function (require) {
       .appendTo('.slides')
     window.location.hash = index;
     setTimeout(function () {
-      $target.addClass('active')
+      $target.addClass('active');
       document.title = $target.find('h1, h2, h3, h4, h5, h6').first().text();
     }, 0);
   }
 
-  function deactivate(index) {
-    $('.slide').eq(index).removeClass('active');
+  function getCurrentIndex() {
+    return parseInt($('.slide').last().attr('data-index'), 10);
   }
 
-  function getCurrentIndex() {
-    return parseInt($('.slides .slide').last().attr('data-index'), 10);
+  function next() {
+    var index = getCurrentIndex();
+    if (index + 1 > $('.slide').length) {
+      return;
+    }
+    activate(index + 1);
+  }
+
+  function previous($slides) {
+    var index = getCurrentIndex();
+    if (index - 1 < 1) {
+      return;
+    }
+    activate(index - 1);
   }
 
   function initialize() {
@@ -53,21 +65,14 @@ define(function (require) {
       (window.location.hash ? parseInt(window.location.hash.slice(1), 10) : 1)
     );
 
-    key('right', function () {
-      var index = getCurrentIndex();
-      if (index + 1 > $slides.length) {
-        return;
-      }
-      activate(index + 1);
-    });
+    window.onhashchange = function () {
+      activate(
+        (window.location.hash ? parseInt(window.location.hash.slice(1), 10) : 1)
+      );
+    };
 
-    key('left', function () {
-      var index = getCurrentIndex();
-      if (index - 1 < 1) {
-        return;
-      }
-      activate(index - 1);
-    });
+    key('right, space', next);
+    key('left', previous);
   }
 
 });

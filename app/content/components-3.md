@@ -22,5 +22,4 @@ TweetButton.attachTo('.tweet-button', {
 ```
 
 - Attributes with a default value of `null` *must* be set when the Component is attached.
-- Attributes are immutable. In debug mode Flight will raise errors if you try to set them after `attachTo` has been called.
-- There's another API for this, `defaultAttrs`, that is deprecated.
+- There's another API for this, `defaultAttrs`, that is deprecated. Included because you'll see it around.

@@ -11,6 +11,10 @@ function tweetButton() {
 }
 
 function composeBox() {
+    this.attributes({
+        composeText: '.js-compose-text'
+    });
+
     this.after('initialize', function () {
         this.on('send', this.send);
     });

@@ -6,19 +6,41 @@ body {
     margin: 0;
     padding: 0;
     font: 20px/1.4 Fira Sans, sans-serif;
+    color: #292f33;
 }
 
 h1, h2, h3, h4, h5 {
     margin: 0em 0em 0.444em;
 }
 
+a {
+    color: #2b7bb9;
+}
+
+a:hover {
+    color: #3b94d9;
+}
+
+a:visited {
+    color: #9266cc;
+}
+
 ul {
     margin: 0em 0em 0.667em;
+}
+
+li > ul {
+    margin: 0;
 }
 
 blockquote {
     font-style: italic;
     position: relative;
+    margin-bottom: 0.667em;
+}
+
+blockquote p {
+    margin: 0;
 }
 
 blockquote:before {
@@ -58,15 +80,43 @@ pre code {
   padding: 0;
 }
 
+hr {
+    border-style: solid;
+    border-color: #e1e8ed;
+}
+
+p + blockquote, ul + blockquote {
+    margin-top: 1.5em;
+}
+
+.slides {
+}
+
 .slide {
-    padding: 4em 2.5em 2.5em 4em;
-    height: 100vh;
-    width: 100vw;
-    max-width: 50em;
+    border-left: 1em solid #e1e8ed;
     position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    /*padding: 4em 2.5em 2.5em 4em;*/
     background: white;
     opacity: 0;
     transition: opacity cubic-bezier(0.215, 0.610, 0.355, 1.000) 1000ms;
+}
+
+.slide-inner {
+    position: absolute;
+    top: 2.5em;
+    right: 2.5em;
+    bottom: 3em;
+    left: 2.5em;
+    overflow-x: hidden;
+}
+
+.slide-scroll-container {
+    overflow-y: auto;
+    max-width: 42em;
 }
 
 .slide[data-index="1"] h1 {
@@ -87,6 +137,7 @@ pre code {
     content: attr(data-index) '/' attr(data-count);
     position: absolute;
     bottom: 1.5em;
-    left: 4em;
+    left: 3.5em;
     opacity: 0.3;
+    font-size: 0.667em
 }

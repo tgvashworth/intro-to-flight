@@ -1,6 +1,8 @@
 ![](/content/flight-logo.png)
 
-# Introduction to Flight
+# FlightDeck
+
+## An introduction to Flight.
 
 The plan:
 

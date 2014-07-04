@@ -1,5 +1,11 @@
 # Components
 
+- Listens to events
+- Emits events
+- Interacts with the DOM
+
+![](/content/component.png)
+
 - Components are just functions with access to the Flight API.<br/>Here's an example in AMD style:
 
 ```js

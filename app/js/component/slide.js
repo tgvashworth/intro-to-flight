@@ -40,8 +40,10 @@ define(function (require) {
 
       this.loadFile(this.attr.file)
         .then(function (markdown) {
-          this.$node.html(
-            marked(markdown)
+          var $inner = $($('#tmpl-slide').text());
+          $inner.find('.slide-scroll-container').html(marked(markdown));
+          this.$node.prepend(
+            $inner
           );
         }.bind(this)).catch(function (why) {
           console.error(why.stack);

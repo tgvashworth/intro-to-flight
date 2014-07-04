@@ -1,10 +1,11 @@
-# What is Flight?
+# Flight 101
 
-- A way to extend Component functionality with Mixins&hellip;
+- Extend Component functionality with Mixins&hellip;
 
 ```js
 var Tweet = defineComponent(tweet, withTweetActions, withTimestamp);
 ```
+
 - &hellip; and communicate using events.
 
 ```js

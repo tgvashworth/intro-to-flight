@@ -1,8 +1,8 @@
-# What is Flight?
+# Flight 101
 
 > Flight is a lightweight, component-based JavaScript framework that maps behavior to DOM nodes.
 
--  A way to create reusable **Components**&hellip;
+-  Create reusable **Components**&hellip;
 
 ```js
 var TweetButton = defineComponent(tweetButton);
