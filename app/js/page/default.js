@@ -36,7 +36,6 @@ define(function (require) {
       .remove()
       .appendTo('.slides')
       .trigger('activate')
-    console.log('activate', index);
     socket.emit('activate', index);
     window.location.hash = index;
     setTimeout(function () {
@@ -89,7 +88,6 @@ define(function (require) {
     key('left', previous);
 
     $(document).on('slideContent', function (event, data) {
-      console.log('slideContent', data);
       socket.emit('slide', data.index, data.content);
     });
 

@@ -1,14 +1,15 @@
 ![](/content/flight-logo.png)
 
-# FlightDeck
+# Flight in 2015
 
-## An introduction to Flight.
+## Introducing TweetDeck's Flight improvements
 
 The plan:
 
-- What is Flight?
-- What isn't Flight?
-- Components & mixins
-- Examples
-- Tooling
-- How we use it in TweetDeck
+- How does TweetDeck use Flight?
+- What were our pain points?
+- Mixins to the rescue
+    - `withChildComponents`
+    - `withState`
+- Coming soon...
+- Flight `v2`
