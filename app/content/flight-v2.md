@@ -1,9 +1,9 @@
 # Flight v2
 
 - **Pull features out of core**
-    - Event proxying
-    - jQuery
-    - Maybe event delegation
+    - Event proxying (replaced by withEventProxy)
+    - jQuery (replaced by withJQuery)
+    - Maybe event delegation (new event API, automatic delegation)
 
 
 - **Build a component/mixin ecosystem**
@@ -19,3 +19,6 @@
     - Linter (already built)
     - Chrome Extensions Inspector (already built)
     - Better developer UX (debug mode, error messaging, static typing)
+
+
+- Get involved on GitHub

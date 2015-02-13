@@ -6,10 +6,11 @@
 
 The plan:
 
+- TweetDeck update
 - How does TweetDeck use Flight?
 - What were our pain points?
-- Mixins to the rescue
+- Mixins to the rescue!
     - `withChildComponents`
     - `withState`
-- Coming soon...
+    - Coming soon...
 - Flight `v2`

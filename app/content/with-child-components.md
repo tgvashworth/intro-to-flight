@@ -8,3 +8,9 @@
 - Uses events for communication
 
 ![](https://g.twimg.com/blog/blog/image/flightteardown.png)
+
+```js
+this.after('initialize', function () {
+    this.attachChild(TweetButton, { ... });
+});
+```

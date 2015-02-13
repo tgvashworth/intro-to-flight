@@ -18,6 +18,9 @@
     - Inspired by functional reactive programming
     - Nearly open source (ironing out the kinks)
 
+
+- These are all *opinions* because they're in userland — you can pick and choose
+
 [with-child-components]: //github.com/flightjs/flight-with-child-components
 [with-state]: //github.com/flightjs/flight-with-state
 [year-of-flight]: //blog.twitter.com/2014/celebrating-over-a-year-of-flightjs

@@ -7,9 +7,11 @@
 
 - **State management**
     - Components need internal state, but there's no official way to manage it
+    - `this.someStateThing` or, worse, `this.attr.anotherStateThing`
 
 
 - **State sharing**
+    - Flowing data around with fire-and-forget events *sucks*
     - State should be kept at the highest possible level and not duplicated
     - UI components should just be a view onto state from a parent
 

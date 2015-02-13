@@ -1,9 +1,9 @@
 # How TweetDeck uses Flight
 
-- ~20k+ lines of Flight code
-    - ~124 Components
-    - More Mixins
-- Three types of Component: UI, UI Controller and data.
+- 20k+ lines of Flight code
+    - 120+ Components
+    - Even more mixins
+- Informally, three kinds of component: UI, UI controller and data.
     - Events are named accordingly: `uiSelectDefaultAccount`, `dataAccount`
 - Lots of Mixins!
     - templating
@@ -17,4 +17,3 @@
 - UI controllers
     - Tie together many UI components
     - Manage higher-level flow that a single component could not
-
